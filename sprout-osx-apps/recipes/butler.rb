@@ -4,3 +4,8 @@ dmg_package "Butler" do
   action :install
   owner node['current_user']
 end
+
+execute "Start Butler on login" do
+  command "addloginitem /Applications/Butler.app"
+  user node['current_user']
+end
